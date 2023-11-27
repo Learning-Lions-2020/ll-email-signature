@@ -1,4 +1,4 @@
-#Learning Lions Email Signature Generator
+# Learning Lions Email Signature Generator
 
 This project is an HTML-based email signature generator. It allows users to create a custom email signature by inputting their name, role, Skype handle (optional), and phone number.
 
