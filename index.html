@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Signature Generator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      width: 80%;
+      max-width: 800px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .input-container {
+      flex: 1;
+      padding: 0 20px;
+    }
+    .input-container input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .signature-container {
+      flex: 1;
+      padding: 20px;
+      border-left: 1px solid #ccc;
+    }
+    .signature {
+      position: relative;
+    }
+    .copy-button {
+      position: absolute;
+      bottom: 22%;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="input-container">
+      <input type="text" id="nameInput" placeholder="Your Name">
+      <input type="text" id="roleInput" placeholder="Your Role">
+      <input type="text" id="skypeInput" placeholder="Skype (optional)">
+      <input type="tel" id="phoneInput" placeholder="Your Phone Number">
+    </div>
+    <div class="signature-container">
+      <div class="signature" id="signature">
+        <table border="0" cellpadding="0" cellspacing="0" style="color:rgb(0,0,0);line-height:3px;font-size:1px;padding:0px;border-spacing:0px;margin:0px;border-collapse:collapse">
+          <tbody>
+            <tr>
+              <td style="padding-bottom:3px">
+                <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:12px;padding:0px;border-spacing:0px;margin:0px;border-collapse:collapse">
+                  <tbody>
+                    <tr>
+                      <td valign="middle" style="font-size:9px;line-height:12px;color:rgb(79,78,85)">
+                        <span id="nameSpan" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:12px;font-weight:bold;color:rgb(110,170,126);text-transform: uppercase;">Your Name<br></span>
+                        <span id="roleSpan" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;text-transform: uppercase;">Your Role<br></span>
+                        <span id="skypeSpan" style="display: none; font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:21px">skype | <span>Your Skype Name</span><br></span>
+                        <span id="phoneSpan" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px">
+                          <a id="phoneLink" href="tel:Your Phone Number" style="line-height:13px;display:inline;color:rgb(79,78,85)" target="_blank">Your Phone Number</a><br>
+                        </span>
+                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;color:rgb(110,170,126)">
+                          <a href="http://www.learninglions.org" style="color:rgb(110,170,126)" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.learninglions.org&amp;source=gmail&amp;ust=1701154493950000&amp;usg=AOvVaw2qD0V3gew_iLTPH3VAdL8s">www.learninglions.org</a><br>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td valign="middle" style="line-height:12px">
+                        <img width="110" height="110" border="0" src="https://ci5.googleusercontent.com/proxy/jGPwtjFp4uGGiRoVzgcYZy896YeQVdCG0vTcdEo3VzhIK4flntWqbluIJzFKya2mo39QOOmrMYW-7oNo0wockebLdpMu-10=s0-d-e1-ft#https://www.learninglions.org/.img_sig/symbol_ll.jpg" alt="ll_logo" style="padding-top:12px" class="CToWUd" data-bit="iit">
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td style="font-size:9px;line-height:12px;color:rgb(79,78,85)"><br>
+                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:13px;font-weight:bold;color:rgb(110,170,126)">LEARNING LIONS - Fighting Poverty with Digital Opportunity<br></span>
+                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:13px">A non-profit organization dedicated to digital vocational training in rural Africa<br></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:18px;line-height:12px;font-weight:bold;border-bottom:2px solid rgb(167,169,172);padding-top:14px;color:rgb(167,169,172)"></td>
+                    </tr>
+                    <tr>
+                      <td style="font-size:9px;line-height:12px;color:rgb(79,78,85)"><br><span style="font-family:Arial,Helvetica,sans-serif;line-height:12px">Learning Lions gemeinnützige UG (haftungsbeschränkt)<br>Schloßstrasse 8 | 82260 Geltendorf | Germany<br>Managing Directors: Ludwig von Bayern | Wilhelm von Stotzingen<br>Registry Court Augsburg, Germany | Registry Number 30328</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="copy-button" id="copyButton">Copy Signature</button>
+    </div>
+  </div>
+
+  <script>
+    function updateSignature() {
+      const name = document.getElementById('nameInput').value || 'Your Name';
+      const role = document.getElementById('roleInput').value || 'Your Role';
+      const skype = document.getElementById('skypeInput').value.trim();
+      const phone = document.getElementById('phoneInput').value || 'Your Phone Number';
+
+      document.getElementById('nameSpan').innerHTML = `${name}<br>`;
+      document.getElementById('roleSpan').innerHTML = `${role}<br>`;
+
+      if (skype) {
+        document.getElementById('skypeSpan').style.display = 'block';
+        document.getElementById('skypeSpan').innerHTML = `skype | ${skype}<br>`;
+      } else {
+        document.getElementById('skypeSpan').style.display = 'none';
+      }
+
+      document.getElementById('phoneSpan').innerHTML = `<a id="phoneLink" href="tel:${phone}" style="line-height:13px;display:inline;color:rgb(79,78,85)" target="_blank">${phone}</a><br>`;
+    }
+
+    function copySignature() {
+      const signature = document.getElementById('signature');
+      const range = document.createRange();
+      range.selectNode(signature);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      alert('Signature copied to clipboard!');
+    }
+
+    // Update signature on input change
+    document.getElementById('nameInput').addEventListener('input', updateSignature);
+    document.getElementById('roleInput').addEventListener('input', updateSignature);
+    document.getElementById('skypeInput').addEventListener('input', updateSignature);
+    document.getElementById('phoneInput').addEventListener('input', updateSignature);
+
+    // Copy signature to clipboard
+    document.getElementById('copyButton').addEventListener('click', copySignature);
+
+    // Initial signature update
+    updateSignature();
+  </script>
+</body>
+</html>
